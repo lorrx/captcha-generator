@@ -7,6 +7,9 @@ The Lorrx Captcha Generator is a simple PHP class to generate and validate captc
 * Custom height / width of captcha
 * Custom encryption of the captcha string
 
+### Example captcha
+![exampleCaptcha](http://www.judosamedan.ch/ref/lorrx/captcha.png)
+
 ## Requirements
 * PHP v5.2+
 * GD module
