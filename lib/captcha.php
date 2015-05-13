@@ -70,23 +70,9 @@
         return $this->captchaPath.$this->salt.".png";
       }
 
-      public function getHash($cryptType="sha1")
+      public function getHash($cryptType="sha512")
       {
-        switch ($cryptType) 
-        {
-          case 'sha1':
-            $secure = sha1($this->secureWord);
-            break;
-          case "crypt":
-            $secure = crypt($this->secureWord);
-            break;
-          case "md5":
-            $secure = md5($this->secureWord);
-            break;
-          default:
-            $secure = $this->secureWord;
-            break;
-        }
+        $secure = hash($cryptType, $this->secureWord);
         return $secure;
       }
 
