@@ -29,13 +29,13 @@
     <form action='' method='post'>
       <label for='captcha'>Captcha Code:</label>
       <input type='text' name='code' vlaue='' autofocus />
-      <input type='hidden' name='key' value='".$captcha->getHash("sha1")."' />
+      <input type='hidden' name='key' value='".$captcha->getHash("sha256")."' />
       <input type='submit' name='checkIT' value='Check captcha' />
     </form>
   ";
   if(isset($_POST["checkIT"]))
   {
-    if(sha1($_POST["code"]) == $_POST["key"]) //or MD5 or crypt
+    if(hash("sha256",$_POST["code"]) == $_POST["key"]) //or MD5 or crypt
     {
       echo "Code is correct!!!";
     }
@@ -48,14 +48,14 @@
   {
     echo "
       <hr />
-      <strong>SHA1 hash:</strong><br />
-      ".$captcha->getHash("sha1")."
+      <strong>SHA256 hash:</strong><br />
+      ".$captcha->getHash("sha256")."
       <br /><br />
-      <strong>Crypt hash:</strong><br />
-      ".$captcha->getHash("crypt")."
+      <strong>SHA512 hash:</strong><br />
+      ".$captcha->getHash("sha512")."
       <br /><br />
-      <strong>MD5 hash:</strong><br />
-      ".$captcha->getHash("md5")."
+      <strong>Whirlpool hash:</strong><br />
+      ".$captcha->getHash("whirlpool")."
     ";
   }
 ?>
