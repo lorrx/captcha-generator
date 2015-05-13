@@ -63,9 +63,7 @@ Returns the path of captcha image.
 ```
 ### captcha::getHash()
 Gets the crypted captcha string. Possible Options:
-* sha1
-* crypt
-* md5
+[See all possible encryption types](http://php.net/manual/en/function.hash.php)
 
 | Parameter           | Type    | Default value | Required | Description                           |
 | ------------------- | ------- | ------------- | -------- | ------------------------------------- |
