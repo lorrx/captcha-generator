@@ -51,7 +51,10 @@
         {
           $this->textMarginTop = ($h-($h/10));
         }
-        else $this->textMarginTop = $MarginTop;
+        else 
+        {
+          $this->textMarginTop = $MarginTop;
+        }
         
         if(!$MarginLeft > 0)
         {
