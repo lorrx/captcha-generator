@@ -24,7 +24,7 @@
   echo "
     <h1>Lorrx Captcha Generator</h1>
     <strong>Captcha:</strong><br />
-    <img src='".$captcha->getCaptcha()."'><br /><br />
+    <img src='".$captcha->getCaptcha()."' title='' /><br/><br/>
     
     <form action='' method='post'>
       <label for='captcha'>Captcha Code:</label>
@@ -33,6 +33,8 @@
       <input type='submit' name='checkIT' value='Check captcha' />
     </form>
   ";
+  
+  // Send Form check
   if(isset($_POST["checkIT"]))
   {
     if(sha1($_POST["code"]) == $_POST["key"]) //or MD5 or crypt
